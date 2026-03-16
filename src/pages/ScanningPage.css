@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.scanning-back {
+  margin-bottom: 16px;
+}
+
 .scanning-subtitle {
   margin-top: 8px;
   margin-bottom: 20px;

@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import OnboardingPage from "./pages/OnboardingPage";
 import ConnectSourcesPage from "./pages/ConnectSourcesPage";
@@ -29,8 +29,14 @@ function App() {
     );
   }, []);
 
+  const location = useLocation();
+  const hideNav =
+    location.pathname === "/" ||
+    location.pathname === "/connect" ||
+    location.pathname === "/scanning";
+
   return (
-    <Layout>
+    <Layout hideNav={hideNav}>
       <Routes>
         <Route path="/" element={<OnboardingPage />} />
         <Route

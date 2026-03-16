@@ -28,6 +28,12 @@ function ScanningPage({ ensureSubscriptionsLoaded }) {
 
   return (
     <div className="scanning">
+      <button
+        className="secondary-button scanning-back"
+        onClick={() => navigate("/connect")}
+      >
+        ← Back to sources
+      </button>
       <h2>Importing Subscriptions</h2>
       <p className="scanning-subtitle">
         Scanning your sources and detecting recurring subscriptions…

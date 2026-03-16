@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./AlertsPage.css";
 
 function AlertsPage({ subscriptions }) {
+  const navigate = useNavigate();
   const withReminders = subscriptions.filter((s) => s.hasReminder);
 
   return (
@@ -21,21 +23,29 @@ function AlertsPage({ subscriptions }) {
       ) : (
         <div className="alerts-list">
           {withReminders.map((sub) => (
-            <div key={sub.id} className="alert-card">
-              <div>
-                <div className="alert-name">{sub.serviceName}</div>
-                <div className="alert-status">
-                  Reminder {sub.reminderConfig.daysBefore} days before via{" "}
-                  {sub.reminderConfig.channels.join(", ")}
+            <button
+              key={sub.id}
+              type="button"
+              className="alert-card"
+              onClick={() => navigate(`/subscription/${sub.id}/reminder`)}
+            >
+              <div className="alert-card-inner">
+                <div>
+                  <div className="alert-name">{sub.serviceName}</div>
+                  <div className="alert-status">
+                    Reminder {sub.reminderConfig.daysBefore} days before via{" "}
+                    {sub.reminderConfig.channels.join(", ")}
+                  </div>
+                </div>
+                <div className="alert-meta">
+                  <span>
+                    Renews {new Date(sub.renewalDate).toLocaleDateString()}
+                  </span>
+                  <span>${sub.amount.toFixed(2)}</span>
                 </div>
               </div>
-              <div className="alert-meta">
-                <span>
-                  Renews {new Date(sub.renewalDate).toLocaleDateString()}
-                </span>
-                <span>${sub.amount.toFixed(2)}</span>
-              </div>
-            </div>
+              <span className="alert-card-hint">Edit reminder →</span>
+            </button>
           ))}
         </div>
       )}

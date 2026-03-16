@@ -20,6 +20,12 @@ function SubscriptionDetailPage({ subscriptions }) {
 
   return (
     <div className="sub-detail">
+      <button
+        className="secondary-button sub-detail-back"
+        onClick={() => navigate("/dashboard")}
+      >
+        ← Back to Dashboard
+      </button>
       <h2>{subscription.serviceName}</h2>
       <p className="sub-detail-status">
         Status: <strong>{subscription.status}</strong>

@@ -1,3 +1,14 @@
+.dashboard-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dashboard-connect {
+  flex-shrink: 0;
+}
+
 .dashboard-subtitle {
   margin-top: 6px;
   color: #c4c7de;

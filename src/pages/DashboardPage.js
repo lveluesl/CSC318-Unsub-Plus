@@ -1,8 +1,10 @@
 import React, { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import SubscriptionList from "../components/SubscriptionList";
 import "./DashboardPage.css";
 
 function DashboardPage({ subscriptions, updateSubscription }) {
+  const navigate = useNavigate();
   const stats = useMemo(() => {
     const active = subscriptions.filter((s) => s.status === "active").length;
     const trials = subscriptions.filter((s) => s.status === "trial").length;
@@ -18,7 +20,15 @@ function DashboardPage({ subscriptions, updateSubscription }) {
     <div className="dashboard">
       <div className="dashboard-header">
         <div>
-          <h2>Dashboard</h2>
+          <div className="dashboard-title-row">
+            <h2>Dashboard</h2>
+            <button
+              className="secondary-button dashboard-connect"
+              onClick={() => navigate("/connect")}
+            >
+              Connect sources
+            </button>
+          </div>
           <p className="dashboard-subtitle">
             Central overview of your active, trial, and cancelled subscriptions.
           </p>

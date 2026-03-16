@@ -62,6 +62,14 @@ function ReminderSettingsPage({ subscriptions, updateSubscription }) {
     }, 800);
   };
 
+  const handleRemoveReminder = () => {
+    updateSubscription(id, { hasReminder: false, reminderConfig: null });
+    setSaved(true);
+    setTimeout(() => {
+      navigate(`/subscription/${id}`);
+    }, 600);
+  };
+
   return (
     <div className="reminder">
       <h2>Reminder Settings</h2>
@@ -121,10 +129,18 @@ function ReminderSettingsPage({ subscriptions, updateSubscription }) {
         <button className="primary-button" onClick={handleSave}>
           Save
         </button>
+        {subscription.hasReminder && (
+          <button
+            className="reminder-remove"
+            onClick={handleRemoveReminder}
+          >
+            Remove reminder
+          </button>
+        )}
       </div>
 
       {saved && (
-        <p className="reminder-success">Reminder saved for this subscription.</p>
+        <p className="reminder-success">Reminder updated for this subscription.</p>
       )}
     </div>
   );

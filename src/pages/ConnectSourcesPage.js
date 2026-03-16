@@ -29,6 +29,12 @@ function ConnectSourcesPage({ connectedSources, setConnectedSources }) {
 
   return (
     <div className="connect">
+      <button
+        className="secondary-button connect-back"
+        onClick={() => navigate("/")}
+      >
+        ← Back
+      </button>
       <h2>Connect Sources</h2>
       <p className="connect-instruction">
         Select accounts to import subscriptions.
