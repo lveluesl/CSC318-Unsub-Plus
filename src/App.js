@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import OnboardingPage from "./pages/OnboardingPage";
@@ -43,6 +43,13 @@ function App() {
     );
   }, []);
 
+  const filteredSubscriptions = useMemo(() => {
+    if (connectedSources.length === 0) return [];
+    return subscriptions.filter((sub) =>
+      connectedSources.includes(sub.source)
+    );
+  }, [subscriptions, connectedSources]);
+
   const location = useLocation();
   const hideNav =
     location.pathname === "/" ||
@@ -72,40 +79,44 @@ function App() {
           path="/dashboard"
           element={
             <DashboardPage
-              subscriptions={subscriptions}
+              subscriptions={filteredSubscriptions}
               updateSubscription={updateSubscription}
             />
           }
         />
         <Route
           path="/subscription/:id"
-          element={<SubscriptionDetailPage subscriptions={subscriptions} />}
+          element={
+            <SubscriptionDetailPage subscriptions={filteredSubscriptions} />
+          }
         />
         <Route
           path="/subscription/:id/reminder"
           element={
             <ReminderSettingsPage
-              subscriptions={subscriptions}
+              subscriptions={filteredSubscriptions}
               updateSubscription={updateSubscription}
             />
           }
         />
         <Route
           path="/subscription/:id/cancel"
-          element={<CancellationOptionsPage subscriptions={subscriptions} />}
+          element={
+            <CancellationOptionsPage subscriptions={filteredSubscriptions} />
+          }
         />
         <Route
           path="/subscription/:id/cancel/confirm"
           element={
             <CancellationConfirmPage
-              subscriptions={subscriptions}
+              subscriptions={filteredSubscriptions}
               updateSubscription={updateSubscription}
             />
           }
         />
         <Route
           path="/alerts"
-          element={<AlertsPage subscriptions={subscriptions} />}
+          element={<AlertsPage subscriptions={filteredSubscriptions} />}
         />
         <Route
           path="/settings"

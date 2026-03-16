@@ -2,6 +2,7 @@ const initialSubscriptions = [
   {
     id: "netflix",
     serviceName: "Netflix",
+    source: "Visa",
     status: "active",
     renewalDate: "2026-04-10",
     amount: 16.99,
@@ -16,6 +17,7 @@ const initialSubscriptions = [
   {
     id: "spotify",
     serviceName: "Spotify",
+    source: "Apple ID",
     status: "active",
     renewalDate: "2026-03-28",
     amount: 9.99,
@@ -27,6 +29,7 @@ const initialSubscriptions = [
   {
     id: "notion",
     serviceName: "Notion",
+    source: "Visa",
     status: "trial",
     renewalDate: "2026-03-22",
     amount: 8.0,
@@ -41,6 +44,7 @@ const initialSubscriptions = [
   {
     id: "ubereats",
     serviceName: "Uber Eats Pass",
+    source: "Visa",
     status: "trial",
     renewalDate: "2026-03-20",
     amount: 11.99,
@@ -52,6 +56,7 @@ const initialSubscriptions = [
   {
     id: "icloud",
     serviceName: "iCloud",
+    source: "Apple ID",
     status: "active",
     renewalDate: "2026-04-01",
     amount: 2.99,
@@ -63,6 +68,7 @@ const initialSubscriptions = [
   {
     id: "ytpremium",
     serviceName: "YouTube Premium",
+    source: "PayPal",
     status: "cancelled",
     renewalDate: "2026-02-15",
     amount: 13.99,
@@ -74,6 +80,7 @@ const initialSubscriptions = [
   {
     id: "adobecc",
     serviceName: "Adobe Creative Cloud",
+    source: "Visa",
     status: "active",
     renewalDate: "2026-04-05",
     amount: 29.99,
@@ -84,6 +91,18 @@ const initialSubscriptions = [
       daysBefore: 14,
       channels: ["email", "push"]
     }
+  },
+  {
+    id: "googleone",
+    serviceName: "Google One",
+    source: "Google",
+    status: "active",
+    renewalDate: "2026-04-15",
+    amount: 1.99,
+    paymentSource: "Google",
+    owner: "Jessica",
+    hasReminder: false,
+    reminderConfig: null
   }
 ];
 
