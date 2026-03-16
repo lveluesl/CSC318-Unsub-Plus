@@ -1,0 +1,74 @@
+.reminder-subtitle {
+  margin-top: 6px;
+  color: #c4c7de;
+}
+
+.reminder-section {
+  margin-top: 20px;
+}
+
+.reminder-section h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.chip-active {
+  border-color: transparent;
+  background: rgba(79, 70, 229, 0.16);
+  color: #a5b4fc;
+}
+
+.chip-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px dashed rgba(148, 163, 184, 0.7);
+  font-size: 13px;
+}
+
+.chip-custom input {
+  width: 52px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: transparent;
+  color: #e5e7eb;
+  padding: 4px 8px;
+}
+
+.chip-custom-label {
+  color: #9ca3af;
+}
+
+.reminder-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 10px;
+}
+
+.reminder-success {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #4ade80;
+}
+

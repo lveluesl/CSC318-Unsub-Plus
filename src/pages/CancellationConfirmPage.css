@@ -1,0 +1,34 @@
+.cancel-confirm-subtitle {
+  margin-top: 6px;
+  color: #c4c7de;
+}
+
+.cancel-confirm-card {
+  margin-top: 16px;
+  padding: 18px 18px 16px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.cancel-warning {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #fbbf24;
+}
+
+.cancel-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.cancel-success {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: #4ade80;
+}
+

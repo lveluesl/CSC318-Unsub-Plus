@@ -1,0 +1,35 @@
+.onboarding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.onboarding-hero {
+  max-width: 520px;
+  text-align: left;
+}
+
+.onboarding-title {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.onboarding-tagline {
+  font-size: 18px;
+  color: #a1a4b8;
+  margin-bottom: 16px;
+}
+
+.onboarding-subtitle {
+  font-size: 15px;
+  color: #c4c7de;
+  margin-bottom: 24px;
+}
+
+.onboarding-support {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+

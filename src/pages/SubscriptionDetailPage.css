@@ -1,0 +1,30 @@
+.sub-detail-status {
+  margin-top: 4px;
+  color: #c4c7de;
+}
+
+.sub-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.sub-detail-grid h4 {
+  margin-bottom: 4px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+}
+
+.sub-detail-grid p {
+  margin: 0;
+}
+
+.sub-detail-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+}
+

@@ -1,0 +1,63 @@
+.cancel-subtitle {
+  margin-top: 6px;
+  color: #c4c7de;
+}
+
+.cancel-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.cancel-card {
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.9);
+  padding: 16px;
+  cursor: pointer;
+}
+
+.cancel-card h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.cancel-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+.guide-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guide-card {
+  background: #020617;
+  padding: 24px 24px 20px;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.guide-card ol {
+  padding-left: 20px;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+.guide-card li + li {
+  margin-top: 4px;
+}
+
+.guide-card button {
+  margin-top: 16px;
+}
+
