@@ -74,8 +74,15 @@ function SubscriptionList({ subscriptions, updateSubscription }) {
               <div className="sub-main">
                 <div>
                   <div className="sub-name">{sub.serviceName}</div>
-                  <div className={`sub-status sub-status-${sub.status}`}>
-                    {sub.status}
+                  <div className="sub-badges">
+                    <span className={`sub-status sub-status-${sub.status}`}>
+                      {sub.status}
+                    </span>
+                    {sub.hasReminder && sub.reminderConfig && (
+                      <span className="sub-reminder-badge" title={`Reminder ${sub.reminderConfig.daysBefore} days before via ${sub.reminderConfig.channels.join(", ")}`}>
+                        Reminder {sub.reminderConfig.daysBefore}d
+                      </span>
+                    )}
                   </div>
                 </div>
                 <div className="sub-money">

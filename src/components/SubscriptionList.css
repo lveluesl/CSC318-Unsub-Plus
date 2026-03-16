@@ -44,13 +44,30 @@
   font-weight: 600;
 }
 
+.sub-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+  align-items: center;
+}
+
 .sub-status {
   display: inline-flex;
   padding: 4px 10px;
   border-radius: 999px;
   font-size: 11px;
-  margin-top: 4px;
   text-transform: capitalize;
+}
+
+.sub-reminder-badge {
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  background: rgba(79, 70, 229, 0.2);
+  color: #a5b4fc;
+  border: 1px solid rgba(165, 180, 252, 0.4);
 }
 
 .sub-status-active {

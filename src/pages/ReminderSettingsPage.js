@@ -58,7 +58,7 @@ function ReminderSettingsPage({ subscriptions, updateSubscription }) {
     });
     setSaved(true);
     setTimeout(() => {
-      navigate(`/subscription/${id}`);
+      navigate(-1);
     }, 800);
   };
 
@@ -66,7 +66,7 @@ function ReminderSettingsPage({ subscriptions, updateSubscription }) {
     updateSubscription(id, { hasReminder: false, reminderConfig: null });
     setSaved(true);
     setTimeout(() => {
-      navigate(`/subscription/${id}`);
+      navigate(-1);
     }, 600);
   };
 
