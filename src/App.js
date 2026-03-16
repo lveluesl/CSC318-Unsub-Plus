@@ -14,14 +14,28 @@ import SettingsPage from "./pages/SettingsPage";
 import initialSubscriptions from "./data/subscriptions";
 
 function App() {
-  const [subscriptions, setSubscriptions] = useState([]);
-  const [connectedSources, setConnectedSources] = useState([]);
+  const [subscriptions, setSubscriptions] = useState(initialSubscriptions);
+  const [connectedSources, setConnectedSourcesState] = useState(() => {
+    try {
+      const saved = localStorage.getItem("unsub_connected_sources");
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  const setConnectedSources = useCallback((newValue) => {
+    setConnectedSourcesState(newValue);
+    try {
+      localStorage.setItem("unsub_connected_sources", JSON.stringify(newValue));
+    } catch (_) {}
+  }, []);
 
   const ensureSubscriptionsLoaded = useCallback(() => {
-    if (subscriptions.length === 0) {
-      setSubscriptions(initialSubscriptions);
-    }
-  }, [subscriptions.length]);
+    setSubscriptions((prev) =>
+      prev.length === 0 ? initialSubscriptions : prev
+    );
+  }, []);
 
   const updateSubscription = useCallback((id, updates) => {
     setSubscriptions((prev) =>

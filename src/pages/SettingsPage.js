@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./SettingsPage.css";
 
 function SettingsPage({ connectedSources, setConnectedSources }) {
+  const navigate = useNavigate();
   const disconnectSource = (source) => {
     setConnectedSources(connectedSources.filter((s) => s !== source));
   };
@@ -41,10 +43,13 @@ function SettingsPage({ connectedSources, setConnectedSources }) {
       <section className="settings-section">
         <h4>Connected sources</h4>
         {connectedSources.length === 0 ? (
-          <p className="settings-empty">
-            No sources connected. Connect from the onboarding or Connect
-            Sources page.
-          </p>
+          <button
+            type="button"
+            className="settings-empty-link"
+            onClick={() => navigate("/connect")}
+          >
+            No sources connected. Click here to connect sources.
+          </button>
         ) : (
           <ul className="sources-list">
             {connectedSources.map((source) => (

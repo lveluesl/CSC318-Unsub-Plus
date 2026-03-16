@@ -7,6 +7,7 @@ const SOURCES = ["Apple ID", "Google", "Visa", "PayPal"];
 function ConnectSourcesPage({ connectedSources, setConnectedSources }) {
   const [selection, setSelection] = useState(connectedSources || []);
   const [showPermission, setShowPermission] = useState(false);
+  const [showSelectPrompt, setShowSelectPrompt] = useState(false);
   const navigate = useNavigate();
 
   const toggleSource = (source) => {
@@ -18,7 +19,10 @@ function ConnectSourcesPage({ connectedSources, setConnectedSources }) {
   };
 
   const handleImportClick = () => {
-    if (selection.length === 0) return;
+    if (selection.length === 0) {
+      setShowSelectPrompt(true);
+      return;
+    }
     setShowPermission(true);
   };
 
@@ -56,11 +60,27 @@ function ConnectSourcesPage({ connectedSources, setConnectedSources }) {
       </div>
       <button
         className="primary-button connect-import"
-        disabled={selection.length === 0}
         onClick={handleImportClick}
       >
         Import
       </button>
+
+      {showSelectPrompt && (
+        <div className="permission-overlay" onClick={() => setShowSelectPrompt(false)}>
+          <div className="permission-card" onClick={(e) => e.stopPropagation()}>
+            <h3>Select a source</h3>
+            <p>Please select at least one source to import subscriptions.</p>
+            <div className="permission-actions">
+              <button
+                className="primary-button"
+                onClick={() => setShowSelectPrompt(false)}
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showPermission && (
         <div className="permission-overlay">

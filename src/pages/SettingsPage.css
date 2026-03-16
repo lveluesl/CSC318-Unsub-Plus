@@ -57,9 +57,23 @@
   font-size: 13px;
 }
 
-.settings-empty {
+.settings-empty-link {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
   font-size: 14px;
-  color: #cbd5f5;
+  color: #a5b4fc;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.12s ease, background-color 0.12s ease;
+}
+
+.settings-empty-link:hover {
+  color: #c7d2fe;
+  background: rgba(79, 70, 229, 0.08);
 }
 
 .sources-list {
